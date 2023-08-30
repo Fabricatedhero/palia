@@ -15,7 +15,7 @@
         #mapFrame {
       display: none;
       width: 100%;
-      height: 600px;
+      height: 800px;
       border: none;
     }
   </style>
@@ -24,7 +24,7 @@
 <nav>
   <ul class="menu">
     <li class="menu-item">
-      <a href="#">Palia Collection</a>
+      <a href="#" id="homeLink">Palia Collection</a>
     </li>
     <li class="menu-item dropdown">
       <a href="#">Maps</a>
@@ -600,6 +600,8 @@
 
 </nav>
 
+<iframe id="mapFrame" src="" frameborder="0"></iframe>
+
 <div class="white-square">
   &emsp;<span class="welcome-text">Welcome,</span><br>
   <p class="body-text">
@@ -607,18 +609,25 @@
     I hope this serves as a one stop shop to find what you need to help you in the world of Palia. The site is a working progress so please bare with me.
   </p>
   <p class="signature-text">
-    &emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--FH/BDF
+    
+    <br>
+    -FH/BDF
   </p>
 </div>
 
-<iframe id="mapFrame" src="" frameborder="0"></iframe>
-
 <script>
   $(document).ready(function() {
-    $("#kilimaLink").click(function() {
+        $("#homeLink").click(function() {
+      // Show the white square when Palia Collection link is clicked
+      $(".white-square").show();
+      $("#mapFrame").hide().attr("src", "");
+    });
+      $("#kilimaLink").click(function() {
+      $(".white-square").hide();
       $("#mapFrame").attr("src", "https://www.paliamaps.com/pages/Kilima.php").show();
     });
     $("#bahariLink").click(function() {
+      $(".white-square").hide();
       $("#mapFrame").attr("src", "https://www.paliamaps.com/pages/BahariBay.php").show();
     });
   });
