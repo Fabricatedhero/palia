@@ -159,6 +159,17 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Style for the white square */
+.white-square2 {
+  left: 150px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
 /* Style for the welcome text */
 .welcome-text {
   font-size: 24px;
@@ -218,5 +229,48 @@ body {
 .map-overlay p {
   margin: 0;
 }
+
+/* Style for the white square container */
+.white-square2 {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 auto;
+width: 700px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the credit text */
+.credit-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Style for the introductory text */
+.credit-info {
+font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* Style for the background information */
+.background-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Style for the text labels (e.g., "Background:") */
+.text-label {
+  width: 120px;
+  font-weight: bold;
+}
+
+/* Style for the specific information (e.g., "Palia's Press Kit - Key Art") */
+.text-info {
+  margin: 0;
+  padding-left: 10px;
+}
+
+
 
 

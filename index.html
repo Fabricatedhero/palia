@@ -314,7 +314,7 @@
               <a href="#">Cooking</a>
               <ul class="sub-submenu-store">
                 <li>
-                  <strong>Location:</strong><br>See Re th or Store at Inn<br>
+                  <strong>Location:</strong><br>See Reth or Store at Inn<br>
                   <br>
                   <strong>Items for sale:</strong><br>
                   Standard Stove: free<br>
@@ -592,7 +592,7 @@
       </li>
       </li>
 <li class="menu-item">
-      <a href="#">Credits</a>
+      <a id="creditsLink" href="#">Credits</a>
       </ul>
       </li>
       </li>
@@ -608,6 +608,31 @@
 
 <div class="map-overlay">powered by paliamaps.com</div>
 <iframe id="mapFrame" src="" frameborder="0"></iframe>
+
+<div class="white-square2" style="display: none;">
+  <div class="credit-text">
+    <p class="credit-info">
+      <strong>All credit and rights go to the original creator(s). This is a compilation of what I have found and where I got them. Kudos to all who took their time to provide their material to the web.</strong>
+    </p>
+    <div class="background-text">
+      <p class="text-label">Background:</p>
+      <p class="text-info">Palia's Press Kit - Key Art</p>
+    </div>
+    <div class="background-text">
+      <p class="text-label">Interactive Maps:</p>
+      <p class="text-info">Paliamaps.com</p>
+    </div>
+    <div class="background-text">
+      <p class="text-label">Recipe Info:</p>
+      <p class="text-info">Various Online Articles and Palia.Wiki.gg</p>
+    </div>
+      <div class="background-text">
+      <p class="text-label">Guild/Store Items:</p>
+      <p class="text-info">Palia.Wiki.gg</p>
+    </div>
+  </div>
+</div>
+
 
 </div>
 <div class="white-square">
@@ -641,22 +666,32 @@
 <script>
   $(document).ready(function() {
     $("#homeLink").click(function() {
+$(".white-square2").hide();
       $(".white-square").show();
       $(".map-overlay").hide(); // Hide the overlay on home link click
       $("#mapFrame").hide().attr("src", "");
     });
 
     $("#kilimaLink").click(function() {
+      $(".white-square2").hide();
       $(".white-square").hide();
       $(".map-overlay").show(); // Show the overlay on Kilima Village link click
       $("#mapFrame").attr("src", "https://www.paliamaps.com/pages/Kilima.php").show();
     });
 
     $("#bahariLink").click(function() {
+      $(".white-square2").hide();
       $(".white-square").hide();
       $(".map-overlay").show(); // Show the overlay on Bahari Bay link click
       $("#mapFrame").attr("src", "https://www.paliamaps.com/pages/BahariBay.php").show();
     });
+
+    $("#creditsLink").click(function() {
+        $(".white-square").hide();
+        $(".white-square2").show().css("display", "flex");
+        $(".map-overlay").hide();
+        $("#mapFrame").hide().attr("src", "");
+      });
 
     // Hide overlay when clicking outside of the map frame
     $("#mapFrame").click(function() {
