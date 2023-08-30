@@ -7,16 +7,10 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="script.js"></script>
   <style>
-    body {
-      margin: 0;
-      font-family: "Comic Sans MS", cursive;
-      background-image: url('https://images.ctfassets.net/qyr5bjm559gz/4mbCdNm4jZgN3bYxtaXSvK/223534088fdf7eea52027ce6bf595b82/PALIA_Key_Art_Logo_1920x1080.jpg?fm=webp');
-      background-size: cover;
-    }
-        #mapFrame {
+      #mapFrame {
       display: none;
       width: 100%;
-      height: 600px;
+      height: 900px;
       border: none;
     }
   </style>
@@ -320,7 +314,7 @@
               <a href="#">Cooking</a>
               <ul class="sub-submenu-store">
                 <li>
-                  <strong>Location:</strong><br>See Reth or Store at Inn<br>
+                  <strong>Location:</strong><br>See Re th or Store at Inn<br>
                   <br>
                   <strong>Items for sale:</strong><br>
                   Standard Stove: free<br>
@@ -568,10 +562,10 @@
       </li>
       </li>
 <li class="menu-item">
-      <a href="#">Guides</a>
+      <a href="#">Guides and Tools</a>
         <ul class="submenu">
         <li class="menu-item dropdown">
-        <a href="#" id="kilimaLink">Fishing</a>
+        <a href="#">Fishing</a>
         <ul class="sub-submenu">
             <li class="menu-item">
               <a href="#">Coming Soon</a>
@@ -607,12 +601,15 @@
             </li>
 
 </nav>
+
 <div class="footer">
   <p>All Rights Reserved</p>
 </div>
 
+<div class="map-overlay">powered by paliamaps.com</div>
 <iframe id="mapFrame" src="" frameborder="0"></iframe>
 
+</div>
 <div class="white-square">
   &emsp;<span class="welcome-text">Welcome,</span><br>
   <p class="body-text">
@@ -627,21 +624,46 @@
 </div>
 
 <script>
+  function updateBackgroundSize() {
+    const body = document.body;
+    if (window.innerWidth >= 1024) {
+      body.style.backgroundSize = "cover";
+    } else {
+      body.style.backgroundSize = "auto";
+    }
+  }
+
+  window.addEventListener("resize", updateBackgroundSize);
+  window.addEventListener("load", updateBackgroundSize);
+</script>
+
+
+<script>
   $(document).ready(function() {
-        $("#homeLink").click(function() {
-      // Show the white square when Palia Collection link is clicked
+    $("#homeLink").click(function() {
       $(".white-square").show();
+      $(".map-overlay").hide(); // Hide the overlay on home link click
       $("#mapFrame").hide().attr("src", "");
     });
-      $("#kilimaLink").click(function() {
+
+    $("#kilimaLink").click(function() {
       $(".white-square").hide();
+      $(".map-overlay").show(); // Show the overlay on Kilima Village link click
       $("#mapFrame").attr("src", "https://www.paliamaps.com/pages/Kilima.php").show();
     });
+
     $("#bahariLink").click(function() {
       $(".white-square").hide();
+      $(".map-overlay").show(); // Show the overlay on Bahari Bay link click
       $("#mapFrame").attr("src", "https://www.paliamaps.com/pages/BahariBay.php").show();
+    });
+
+    // Hide overlay when clicking outside of the map frame
+    $("#mapFrame").click(function() {
+      $(".map-overlay").hide();
     });
   });
 </script>
+
 </body>
 </html>

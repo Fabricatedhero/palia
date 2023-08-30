@@ -10,15 +10,3 @@ $(document).ready(function () {
     e.stopPropagation();
   });
 });
-  // Add an event handler for when a menu item is hovered
-  $(".menu-item").hover(
-    function() {
-      // Show the white square
-      $(".white-square").css("transform", "scaleY(1)");
-    },
-    function() {
-      // Hide the white square
-      $(".white-square").css("transform", "scaleY(0)");
-    }
-  );
-});
