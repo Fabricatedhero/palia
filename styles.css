@@ -1,0 +1,167 @@
+/* Your provided CSS styles */
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", cursive;
+  background-image: url('https://images.ctfassets.net/qyr5bjm559gz/4mbCdNm4jZgN3bYxtaXSvK/223534088fdf7eea52027ce6bf595b82/PALIA_Key_Art_Logo_1920x1080.jpg?fm=webp');
+  background-size: cover;
+}
+
+.menu {
+  list-style-type: none; /* Remove list bullets (dots) */
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.menu-item {
+  white-space: nowrap; /* Prevent word wrap */
+  margin: 0 10px;
+  position: relative;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s; /* Adding transition for smooth color change */
+}
+
+/* Apply hover color for menu items */
+.menu-item:hover a {
+  color: black;
+}
+
+.submenu {
+  z-index: 2; /* Adjust as needed to keep submenu above the white square */
+  list-style-type: none; /* Remove list bullets (dots) */
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.menu-item:hover > .submenu {
+  display: block;
+}
+
+/* Highlight only the specific item under mouse in submenu */
+.submenu li:hover {
+  background-color: yellow;
+}
+.sub-submenu {
+  list-style-type: none; /* Remove list bullets (dots) */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.sub-submenu-furniture {
+  list-style-type: none; /* Remove list bullets (dots) */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 10px;
+  max-height: 500px; /* Set a maximum height */
+  overflow-y: auto; /* Enable vertical scroll if needed */
+}
+.sub-submenu-store {
+  list-style-type: none; /* Remove list bullets (dots) */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 10px;
+}
+.submenu li:hover > .sub-submenu {
+  display: block;
+}
+.submenu li:hover > .sub-submenu-store {
+  display: block;
+}
+.submenu li:hover > .sub-submenu-furniture {
+  display: block;
+}
+
+.sub-sub-submenu {
+  list-style-type: none; /* Remove list bullets (dots) */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.sub-submenu li:hover > .sub-sub-submenu {
+  display: block;
+}
+.sub-submenu-store li:hover > .sub-sub-submenu {
+  display: block;
+}
+
+/* Highlight only the specific item under mouse in sub-sub-submenu */
+.sub-sub-submenu li:hover {
+  background-color: white;
+}
+/* Highlight only the specific item under mouse in sub-sub-submenu */
+.sub-submenu-store li:hover {
+  background-color: white;
+}
+/* Highlight only the specific item under mouse in sub-sub-submenu */
+.sub-submenu-furniture li:hover {
+  background-color: white;
+}
+
+.red-text {
+  color: red;
+}
+
+/* Style for the white square */
+.white-square {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the welcome text */
+.welcome-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Style for the body text */
+.body-text {
+  font-size: 14px;
+  font-weight: bold;
+  /* Other styles... */
+}
+
+/* Style for the signature text */
+.signature-text {
+  margin-top: 10px;
+  font-size: 14px;  
+  font-weight: bold;
+  /* Other styles... */
+}

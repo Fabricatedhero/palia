@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Page Title</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", cursive;
+      background-image: url('https://images.ctfassets.net/qyr5bjm559gz/4mbCdNm4jZgN3bYxtaXSvK/223534088fdf7eea52027ce6bf595b82/PALIA_Key_Art_Logo_1920x1080.jpg?fm=webp');
+      background-size: cover;
+    }
+        #mapFrame {
+      display: none;
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <ul class="menu">
+    <li class="menu-item">
+      <a href="#">Palia Collection</a>
+    </li>
+    <li class="menu-item dropdown">
+      <a href="#">Maps</a>
+      <ul class="submenu">
+        <li><a href="#" id="kilimaLink">Kilima Village</a></li>
+        <li><a href="#" id="bahariLink">Bahari Bay</a></li>
+      </ul>
+    </li>
+    <li class="menu-item dropdown">
+      <a href="#">Recipes</a>
+      <ul class="submenu">
+        <li class="menu-item dropdown">
+          <a href="#">Find</a>
+          <ul class="sub-submenu">
+            <li class="menu-item">
+              <a href="#">Bacon-Stuffed Mushrooms</a>
+              <ul class="sub-sub-submenu">
+                  <strong>Location:</strong><br>In the back of the farmer's house, just to the left of the stove. Read the book to learn the recipe.<br>
+                  Focus Regained: 250<br>
+                  <br>
+                  <strong>Materials Required:</strong><br>
+                  1x Mushroom<br>
+                  1x Butter<br>
+                  1x Meat<br>
+                  1x Tomato<br>
+                  1x Spice Sprouts<br>
+                  <span class="red-text">Oven and Prep station needed
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Loaded Potato Soup</a>
+              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>On the table in the kitchen of Hodari and Najuma's House<br>
+                   Focus Regained: 275<br><br>
+                  <strong>Materials Required:</strong><br>
+                  x1 Potato<br>
+                  x1 Butter<br>
+                  x1 Onion<br>
+                  x1 Wild Garlic<br>
+                  x1 Chapaa Meat<br>
+                  <span class="red-text">requires Standard Stove, Prep Station, Standard Oven
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Palian Onion Soup</a>
+              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>Reward for completing main quest "Half Boiled"<br>
+                  Focus Regained: 100<br><br>
+                  <strong>Materials Required:</strong><br>
+                  x1 Onion<br>
+                  x1 Flour<br>
+                  x1 Wild Garlic<br>
+                  <span class="red-text">requires Standard Stove, Prep Station
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Creamy Carrot Soup</a>
+              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>Complete quest "Manners, Manners" from Caleri in the Library<br>
+                  Focus Regained: 125<br><br>
+                  <strong>Materials Required:</strong><br>
+                  x1 Carrot<br>
+                  x1 Milk<br>
+                  x1 Spice Sprouts<br>
+                  x1 Wild Garlic<br>
+                  <span class="red-text">requires Standard Stove, Prep Station
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Sernuk Noodle Stew</a>
+              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>Location: Inside Ashura's room<br>
+                  Focus Regained: 225<br><br>
+                  <strong>Materials Required:</strong><br>
+                  x1 Sernuk Meat<br>
+                  x1 Spice Sprouts<br>
+                  x1 Wheat<br>
+                  x1 Onion<br>
+                  x1 Carrot<br>
+                  <span class="red-text">Prep station needed
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Cream of Tomato Soup</a>
+              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>Complete Reth's Friendship quest level 3 and gain access to his storage room<br>
+                  Focus Regained: 275<br><br>
+                  <strong>Materials Required:</strong><br>
+                  x1 Chapaa Meat<br>
+                  x1 Butter<br>
+                  x1 Potato<br>
+                  x1 Mushroom<br>
+                  x1 Wild Garlic<br>
+                  x1 Spice Sprouts<br>
+                  <span class="red-text">requires Friendship Level 3
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Apple Pie</a>
+              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>Find the green book on the counter inside Delaila's room<br>
+                  Focus Regained: 350<br><br>
+                  <strong>Materials Required:</strong><br>
+                  x1 Butter<br>
+                  x1 Wheat<br>
+                  x1 Sweet Leaf<br>
+                  x1 Apple<br>
+                  x1 Spice Sprouts<br>
+                  <span class="red-text">requires Friendship Level 3
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Cream of Mushroom Soup</a>
+              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>Obtained from Hekla during the level 4 friendship quest for Jina<br>
+                  Focus Regained: 275<br><br>
+                  <strong>Materials Required:</strong><br>
+                  x1 Mushroom<br>
+                  x1 Milk<br>
+                  x1 Spice Sprouts<br>
+                  x1 Onion<br>
+                  x1 Wheat<br>
+                  x1 Wild Garlic<br>
+                  <span class="red-text">requires Friendship Level 4 with Jina
+                </li>
+              </ul>
+            </li>
+             <li class="menu-item">
+              <a href="#">Trout Dinner</a>
+              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>Found in Einar’s Cave<br>
+                  <br>
+                  <strong>Focus Regained:</strong> 200<br><br>
+                  <strong>Materials Required:</strong><br>
+                  x1 Trout<br>
+                  x1 Spice<br>
+                  x1 Potato<br>
+                  x1 Wild Garlic<br>
+                  <span class="red-text">requires Friendship Level 3
+                </li>
+              </ul>
+            </li>
+                        <li class="menu-item">
+              <a href="#">Fried Catfish Dinner</a>
+              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>Found in Hassian’s Grove<br>
+                  <br>
+                  <strong>Focus Regained:</strong> 225<br><br>
+                  <strong>Materials Required:</strong><br>
+                  x1 Catfish<br>
+                  x1 Flour<br>
+                  x1 Spice<br>
+                  x1 Tomato<br>
+                  x1 Onion<br>
+                  <span class="red-text">requires friendship level 3
+                </li>
+              </ul>
+            </li>
+                                    <li class="menu-item">
+              <a href="#">Macaron</a>
+              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>Speak with Hekla during the "Great Human Bake Off" found item quest<br>
+                  <br>
+                  <strong>Focus Regained:</strong> 225<br><br>
+                  <strong>Materials Required:</strong><br>
+                  x1 Flour<br>
+                  x1 Egg<br>
+                  x1 Sweet Leaf<br>
+                  x1 Milk<br>
+                  <span class="red-text">x2 Mixing Station
+                  </li>
+              </ul>
+            </li>
+                                    <li class="menu-item">
+              <a href="#">Akwinduu Chapaa</a>
+              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>Found by collecting the three pieces near the Statue Garden<br>
+                  <br>
+                  <strong>Focus Regained:</strong> 275<br><br>
+                  <strong>Materials Required:</strong><br>
+                  x1 Chapaa Meat<br>
+                  x1 Butter<br>
+                  x1 Potato<br>
+                  x1 Mushroom<br>
+                  x1 Wild Garlic<br>
+                  x1 Spice Sprouts<br>
+                  <span class="red-text">requires Standard Stove, Prep Station, Standard Oven
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item dropdown">
+          <a href="#">Buy</a>
+          <ul class="sub-submenu">
+            <li class="menu-item">
+              <a href="#">Cooking Guild Store</a>
+                              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>See Reth or Store at Inn<br>
+                  <br>
+                  <strong>Recipes for sale:</strong><br>
+                  Hearty Vegetable Soup: 100 gold<br>
+                  Ramen: 250 gold<br>
+                  Steak Dinner: 500 gold<br>
+                  Meaty Stir Fry: 1,000 gold<br>
+                  Blueberry Pie: 1,500 gold<br>
+                  Veggie Fried Rice: 2,000 gold<br>
+                  Chapaa Masala: 2,500 gold<br>
+                  Celebration Cake: 3,000 gold<br>
+                   </li>
+              </ul>
+                </li>
+              </ul>
+            </li>
+        <li class="menu-item dropdown">
+          <a href="#">Fished</a>
+          <ul class="sub-submenu">
+                                    <li class="menu-item">
+              <a href="#">Sashimi</a>
+              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>Fish in Bahari Bay rivers with no bait<br>
+                  <br>
+                  <strong>Focus Regained:</strong> 100<br><br>
+                  <strong>Materials Required:</strong><br>
+                  x1 Fish<br>
+                  x1 Spice Sprouts<br>
+                  x1 Rice<br>
+                </li>
+              </ul>
+            </li>
+                                                <li class="menu-item">
+              <a href="#">Fish Stew</a>
+              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>Fish on the Bahari Bay Coast with a worm<br>
+                  <br>
+                  <strong>Focus Regained:</strong> 100<br><br>
+                  <strong>Materials Required:</strong><br>
+                  x1 Fish<br>
+                  x1 Spice Sprouts<br>
+                  x1 Rice<br>
+                  <span class="red-text">requires worm
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Sushi</a>
+              <ul class="sub-sub-submenu">
+                <li>
+                  <strong>Location:</strong><br>Fish in any pond with a glow worm<br>
+                  <br>
+                  <strong>Focus Regained:</strong> 300<br><br>
+                  <strong>Materials Required:</strong><br>
+                  x1 Fish<br>
+                  x1 Spice Sprouts<br>
+                  x1 Rice<br>
+                  <span class="red-text">x2 Prep Stations
+                    <br>
+                    x1 glow worm
+                </li>
+              </ul>
+            </li>
+                </li>
+              </ul>
+            </li>    
+          </ul>
+        </li>
+    <li class="menu-item dropdown">
+      <a href="#">Guild/Store Items</a>
+      <ul class="submenu">
+<li class="menu-item">
+              <a href="#">Cooking</a>
+              <ul class="sub-submenu-store">
+                <li>
+                  <strong>Location:</strong><br>See Reth or Store at Inn<br>
+                  <br>
+                  <strong>Items for sale:</strong><br>
+                  Standard Stove: free<br>
+                  Prep Station: free<br>
+                  Mixing Station: free<br>
+                  Standard Oven: free<br>
+                  Hearty Vegetable Soup: 100 gold or 2 tokens<br>
+                  Ramen: 250 gold<br>
+                  Steak Dinner: 500 gold or 5 tokens<br>
+                  Meaty Stir Fry: 1,000 gold<br>
+                  Blueberry Pie: 1,500 gold<br>
+                  Veggie Fried Rice: 2,000 gold<br>
+                  Chapaa Masala: 2,500 gold or 10 tokens<br>
+                  Celebration Cake: 3,000 gold<br>
+                  Cook's Plaque: 140 tokens<br>
+                  Ramen Bowl Wallpaper: 220 tokens<br>
+                  Cook's Trays: 560 tokens<br>
+                  Cook's Market Stand: 980 tokens<br>                  
+      </ul>
+      </li>
+      </li>
+  <li class="menu-item">
+              <a href="#">Bug</a>
+              <ul class="sub-submenu-store">
+                <li>
+                  <strong>Location:</strong><br>See Auni<br>
+                  <br>
+                  <strong>Items for sale:</strong><br>
+                  Sneaky Smoke bomb: 100 gold or 4 tokens<br>
+                  Standard Belt: 250 gold<br>
+                  Sticky smoke bomb: 500 gold or 4 tokens<br>
+                  Smoke Candle: 1,000 gold or 5 tokens<br>
+                  Fine Belt: 1,500<br>
+                  Honey Lure: 2,000 gold or 75 tokens<br>
+                  Buzzy Jar: 2,500 gold or 50 tokens<br>
+                  Exquisite Bet: 3,000 gold<br>
+                  Supreme Smoke Bomb: 3,000 gold or 12 tokens<br>
+                  Bug Catcher's Plaque: 140 tokens<br>
+                  Butterfly Lights Wallpaper: 220 tokens<br>
+                  Bug Catcher's Lure: 560 tokens<br>
+                  Bug Catcher's Insectarium: 980 tokens<br>
+                  </ul>
+      </li>
+      </li>
+  <li class="menu-item">
+              <a href="#">Fishing</a>
+              <ul class="sub-submenu-store">
+                <li>
+                  <strong>Location:</strong><br>See Elnar<br>
+                  <br>
+                  <strong>Items for sale:</strong><br>
+                  Minor Rod Health Booster: 100 gold<br>
+                  Standard Rod: 250 gold<br>
+                  Worm Farm: 500 gold<br>
+                  Fisherman's Brew: 1,000 gold<br>
+                  Fine Rpd: 1,500 gold<br>
+                  Glow Worm Farm: 2,000 gold<br>
+                  Tuning Fork: 2,500 gold or 50 tokens<br>
+                  Exquisite Rod: 3,000 gold<br>
+                  Glow Worm: 10 tokens<br>
+                  Major Hook Time Booster: 5 tokens<br>
+                  Major Rod Recovery Booster: 5 tokens<br>
+                  Major Safe Zone Size Booster: 5 tokens<br>
+                  Major Safe Zone Speed Booster: 5 tokens<br>
+                  Standard Bobber: 75 tokens<br>
+                  Fine Bobber: 175 tokens<br>
+                  Exquisite Bobber: 275 tokens<br>
+                  Fisher's Plaque: 140 tokens<br>
+                  Under the Sea Wallpaper: 220 tokens<br>
+                  Lantern Bobber: 550 tokens<br>
+                  Fisher's Treasure Chest: 560 tokens<br>
+                  Fisher's Aquarium: 980 tokens<br>
+                  </ul>
+      </li>
+      </li>
+  <li class="menu-item">
+              <a href="#">Foraging</a>
+              <ul class="sub-submenu-store">
+                <li>
+                  <strong>Location:</strong><br>See Ashura or Store at Inn<br>
+                  <br>
+                  <strong>Items for sale:</strong><br>
+                  Basic Sawmill: 100 gold<br>
+                  Standard Axe: 250 gold<br>
+                  Heartwood Plank: 500 gold<br>
+                  Heavy Sawmill: 1,000 gold<br>
+                  Fine Axe: 1,500 gold<br>
+                  Flow-infused Plank: 2,000 gold<br>
+                  Dowsing Rod: 2,500 gold or 50 tokens<br>
+                  Exquisite Axe: 3,000 gold<br>
+                  Flow-infused Plank: 3 tokens<br>
+                  Heartdrop Lily: 20 tokens<br>
+                  Brightshroom: 6 tokens<br>
+                  Dragon's Beard Peat: 8 tokens<br>
+                  Sweet Leaf: 3 tokens<br>
+                  Heat Root: 6 tokens<br>
+                  Dari Cloves: 12 tokens<br>
+                  Forager's Plaque: 140 tokens<br>
+                  Mushroom Woods Wallpaper: 220 tokens<br>
+                  Kilima Koi Pond: 1,120 tokens<br>
+                  Forager's Planter: 560 tokens<br>
+                  Forager's Bonsai: 980 tokens<br>
+                  </ul>
+      </li>
+      </li>
+        <li class="menu-item">
+              <a href="#">Furniture</a>
+              <ul class="sub-submenu-furniture">
+                <li>
+                  <strong>Location:</strong><br>See Tish or Store at Inn<br>
+                  <br>
+                  <strong>Items for sale:</strong><br>
+                  Glass Furnace: 100 gold<br>
+                  Fabric Loom: 100 gold<br>
+                  Homestead Medium Bed: 25 gold<br>
+                  Homestead Cozy Chair: 25 gold<br>
+                  Homestead Large Dresser: 25 gold<br>
+                  Homestead Nightstand: 25 gold<br>
+                  Homestead Wardrobe: 25 gold<br>
+                  Kilima Large Lantern: 50 gold<br>
+                  Kilima Inn Dining Table: 50 gold<br>
+                  Kilima Inn Dining Char: 50 gold<br>
+                  Kilima Inn Wheat Planter: 50 gold<br>
+                  Ranch House Floor Cabinet: 50 gold<br>
+                  Ranch House Nightstand: 50 gold<br>
+                  Ranch House Dining Chair: 50 gold<br>
+                  Modification Bench: 500 gold<br>
+                  Industrial Dresser: 100 gold<br>
+                  Industrial Dining Table: 100 gold<br>
+                  Capital Chic Fern Planter: 200 gold<br>
+                  Capital Chic Nightstand: 200 gold<br>
+                  Capital Chic Wardrobe: 200 gold<br>
+                  Capital Chic Bed: 200 gold<br>
+                  Silk: 1,500 gold<br>
+                  Ravenwood Large End Table: 300 gold<br>
+                  Ravenwood Candelabra: 300 gold<br>
+                  Ravenwood Console Table: 300 gold<br>
+                  Bellflower Armchair: 500 gold<br>
+                  Bellflower Nightstand: 500 gold<br>
+                  Bellflower Wardrobe: 500 gold<br>
+                  Bellflower Bed: 500 gold<br>
+                  Moonstruck Bed: 750 gold<br>
+                  Moonstruck Nightstand: 750 gold<br>
+                  Moonstruck Dining Chair: 750 gold<br>
+                  Dragontide Bed: 1,000 gold<br>
+                  Dragontide Armchair: 1,000 gold<br>
+                  Dragontide Wardrobe: 1,000 gold<br>
+                  Dragontide Low End Table: 1,000 gold<br>
+                  Furniture Maker's Plaque: 140 tokens<br>
+                  Blueprint Board Wallpaper: 220 tokens<br>
+                  Furniture Maker's Tool Chest: 560 tokens<br>
+                  Furniture Maker's Drawing Board 980 tokens<br>
+                  </ul>
+      </li>
+      </li>
+   <li class="menu-item">
+              <a href="#">Gardening</a>
+              <ul class="sub-submenu-store">
+                <li>
+                  <strong>Location:</strong><br>See Badruu or Store at Farm<br>
+                  <br>
+                  <strong>Items for sale:</strong><br>
+                  Soil: 250-3,000 gold<br>
+                  Seed Collector: 100 gold<br>
+                  Standard Watering Can: 250 gold<br>
+                  Standard Hoe: 500 gold<br>
+                  QualityUp Fertilizer: 1,000 gold<br>
+                  Fine Watering Can: 1,500 gold<br>
+                  Fine Hoe: 1,500 gold<br>
+                  Preserves Jar: 2,500 gold<br>
+                  Exquisite Watering Can: 3,000 gold<br>
+                  Exquisite Hoe: 3,000 gold<br>
+                  Blueberry Bush Seed: 45 tokens<br>
+                  Apple Tree Seed: 280 tokens<br>
+                  HarvestBoost Fertilizer: 10 tokens<br>
+                  SpeedyGro Fertilizer: 20 tokens<br>
+                  Gardener's Plaque: 140 tokens<br>
+                  Tomato Vines Wallpaper: 220 tokens<br>
+                  Gardener's Cornucopia: 560 tokens<br>
+                  Gardener's Growhouse: 980 tokens<br>
+                  Well: 1,120 tokens<br>
+                  </ul>
+      </li>
+      </li>
+    <li class="menu-item">
+              <a href="#">Hunting</a>
+              <ul class="sub-submenu-store">
+                <li>
+                  <strong>Location:</strong><br>See Hassian<br>
+                  <br>
+                  <strong>Items for sale:</strong><br>
+                  Standard Arrow: 100 gold or 3 tokens<br>
+                  Standard Bow: 250 gold<br>
+                  Slowdwn Arrow: 500 gold or 4 tokens<br>
+                  Fine Arrow: 1,000 gold or 5 tokens<br>
+                  Fine Bow: 1,500 gold<br>
+                  Dispel Arrow: 2,000 gold or 6 tokens<br>
+                  Hunter's Horn: 2,500 gold or 25 tokens<br>
+                  Exquisite Bow: 3,000 gold<br>
+                  Blue Peony Firework: 6 tokens<br>
+                  Green Peony Firework: 6 tokens<br>
+                  Orange Peony Firework: 6 tokens<br>
+                  Purple Peony Firework: 6 tokens<br>
+                  Red Peony Firework: 6 tokens<br>
+                  White Peony Firework: 6 tokens<br>
+                  Yellow Peony Firework: 6 tokens<br>
+                  Hunter's Plaque: 140 tokens<br>
+                  Sernuk Run Wallpaper: 220 tokens<br>
+                  Hunter's Target: 560 tokens<br>
+                  Hunter's Mannequin: 980 tokens<br>
+                  </ul>
+      </li>
+      </li>
+     <li class="menu-item">
+              <a href="#">Mining</a>
+              <ul class="sub-submenu-store">
+                <li>
+                  <strong>Location:</strong><br>See Hodari<br>
+                  <br>
+                  <strong>Items for sale:</strong><br>
+                  Basic Smelter: 100 gold<br>
+                  Copper Bar: 50 gold<br>
+                  Ceramic: 50 gold<br>
+                  Standard Pick: 250 gold<br>
+                  Iron Bar: 100 gold<br>
+                  Repair Station: 500 gold<br>
+                  Silver Bar: 250 gold or 25 tokens<br>
+                  Heavy Smelter: 1,000 gold<br>
+                  Fine Pick: 1,500 gold<br>
+                  Palium Bar: 500 gold or 10 tokens<br>
+                  Gold Bar: 2,000 gold or 50 tokens<br>
+                  Ore Compass: 2,500 gold or 50 tokens<br>
+                  Exquisite Pick: 3,000<br>
+                  Miner's Plaque: 140 tokens<br>
+                  Yellow Peony Firework: 6 tokens<br>
+                  Hunter's Plaque: 140 tokens<br>
+                  Furnace Parts Wallpaper: 220 tokens<br>
+                  Miner's Anvil: 560 tokens<br>
+                  Miner's Curio Case: 980 tokens<br>
+                  </ul>
+      </li>
+      </li>
+     
+      </ul>
+      </li>
+      </li>
+<li class="menu-item">
+      <a href="#">Guides</a>
+        <ul class="submenu">
+        <li class="menu-item dropdown">
+        <a href="#" id="kilimaLink">Fishing</a>
+        <ul class="sub-submenu">
+            <li class="menu-item">
+              <a href="#">Bacon-Stuffed Mushrooms</a>
+                  </ul>
+      </li>
+      </li>
+            <li class="menu-item dropdown">
+            <a href="#">Furniture</a>
+          <ul class="sub-submenu">
+            <li class="menu-item">
+              <a href="#">Bacon-Stuffed Mushrooms</a>
+                  </ul>
+      </li>
+      </li>
+              <li class="menu-item dropdown">
+            <a href="#">Fertilizer</a>
+          <ul class="sub-submenu">
+            <li class="menu-item">
+              <a href="#">Bacon-Stuffed Mushrooms</a>
+                  </ul>
+      </li>
+      </li>
+
+                  </li>
+              </ul>
+            </li>
+
+</nav>
+
+<div class="white-square">
+  &emsp;<span class="welcome-text">Welcome,</span><br>
+  <p class="body-text">
+    This website is a collection of information found throughout the internet either by players, websites or wiki's.
+    I hope this serves as a one stop shop to find what you need to help you in the world of Palia.
+  </p>
+  <p class="signature-text">
+    &emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--BlueDuckFunk
+  </p>
+</div>
+
+<iframe id="mapFrame" src="" frameborder="0"></iframe>
+
+<script>
+  $(document).ready(function() {
+    $("#kilimaLink").click(function() {
+      $("#mapFrame").attr("src", "https://www.paliamaps.com/pages/Kilima.php").show();
+    });
+    $("#bahariLink").click(function() {
+      $("#mapFrame").attr("src", "https://www.paliamaps.com/pages/BahariBay.php").show();
+    });
+  });
+</script>
+</body>
+</html>
