@@ -26,6 +26,7 @@ body {
 }
 
 .menu-item {
+  display: flex;
   white-space: nowrap; /* Prevent word wrap */
   margin: 0 10px;
   position: relative;
@@ -55,7 +56,24 @@ body {
   padding: 10px;
 }
 
+.submenu-map {
+  z-index: 2; /* Adjust as needed to keep submenu above the white square */
+  list-style-type: none; /* Remove list bullets (dots) */
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 10px;
+}
+
 .menu-item:hover > .submenu {
+  display: block;
+}
+
+.menu-item:hover > .submenu-map {
   display: block;
 }
 
@@ -106,10 +124,22 @@ body {
 .submenu li:hover > .sub-submenu {
   display: block;
 }
+.submenu-map li:hover > .sub-submenu {
+  display: block;
+}
+
 .submenu li:hover > .sub-submenu-store {
   display: block;
 }
+.submenu-map li:hover > .sub-submenu-store {
+  display: block;
+}
+
 .submenu li:hover > .sub-submenu-furniture {
+  display: block;
+}
+
+.submenu-map li:hover > .sub-submenu-furniture {
   display: block;
 }
 
@@ -212,6 +242,15 @@ body {
   visibility: visible;
 }
 
+.submenu-map a i {
+  visibility: hidden;
+  margin-right: 5px;
+}
+
+.submenu-map a:hover i {
+  visibility: visible;
+}
+
 /* Add this to your existing CSS */
 .map-overlay {
   display: none;
@@ -275,6 +314,49 @@ color: #777777;
   padding-left: 10px;
 }
 
+.submenu li:hover::after {
+  content: "\25BA";
+  margin-left: 20px;
+  font-size: 0.8em; /* Adjust the font size as needed */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.submenu-map li:hover::after {
+  content: "\25BA";
+  margin-left: 20px;
+  font-size: 0.8em; /* Adjust the font size as needed */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 
+.sub-sub-submenu li:hover::after {
+  content: ""; /* Remove the content property */
+  margin-left: 0; /* Reset the margin */
+  font-size: 0; /* Set font-size to 0 to hide the icon */
+  display: none; /* Hide the icon */
+}
 
+.sub-submenu-furniture li:hover::after {
+  content: ""; /* Remove the content property */
+  margin-left: 0; /* Reset the margin */
+  font-size: 0; /* Set font-size to 0 to hide the icon */
+  display: none; /* Hide the icon */
+}
 
+.sub-submenu-store li:hover::after {
+  content: ""; /* Remove the content property */
+  margin-left: 0; /* Reset the margin */
+  font-size: 0; /* Set font-size to 0 to hide the icon */
+  display: none; /* Hide the icon */
+}
+
+.submenu-map li:hover::after {
+  content: ""; /* Remove the content property */
+  margin-left: 0; /* Reset the margin */
+  font-size: 0; /* Set font-size to 0 to hide the icon */
+  display: none; /* Hide the icon */
+}
