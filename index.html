@@ -22,6 +22,14 @@
       border: none;
     }
    </style>
+  <style>
+      #gardenFrame {
+      display: none;
+      width: 100%;
+      height: 885px;
+      border: none;
+    }
+   </style>
 
 </head>
 <body>
@@ -728,8 +736,11 @@
       <a href="#">Tools</a>
         <ul class="submenu">
         <li><a href="#" id="AllguidesLink">Guides <i class="fas fa-link"></i></a></li>
-      </ul>
-    </li>
+        <li><a href="#" id="gardenLink">Garden Planner <i class="fas fa-link"></i></a></li>
+                </li>
+              </ul>
+            </li>
+
 <li class="menu-item">
       <a id="creditsLink" href="#">Credit</a>
       </ul>
@@ -747,7 +758,6 @@
 
 <div class="map-overlay">powered by paliamaps.com</div>
 <iframe id="mapFrame" src="" frameborder="0"></iframe>
-<iframe id="guideFrame" src="" frameborder="0"></iframe>
 
 <div class="white-square2" style="display: none;">
   <div class="credit-text">
@@ -805,6 +815,8 @@
   window.addEventListener("load", updateBackgroundSize);
 </script>
 
+<iframe id="guideFrame" src="" frameborder="0"></iframe>
+<iframe id="gardenFrame" src="" frameborder="0"></iframe>
 
 <script>
   $(document).ready(function() {
@@ -814,6 +826,7 @@ $(".white-square2").hide();
       $(".map-overlay").hide(); // Hide the overlay on home link click
       $("#mapFrame").hide().attr("src", "");
       $("#guideFrame").hide().attr("src", "");
+      $("#gardenFrame").hide().attr("src", "");
     });
 
     $("#kilimaLink").click(function() {
@@ -822,6 +835,7 @@ $(".white-square2").hide();
       $(".map-overlay").show(); // Show the overlay on Kilima Village link click
       $("#mapFrame").attr("src", "https://www.paliamaps.com/pages/Kilima.php").show();
       $("#guideFrame").hide().attr("src", "");
+      $("#gardenFrame").hide().attr("src", "");
     });
 
     $("#bahariLink").click(function() {
@@ -830,6 +844,7 @@ $(".white-square2").hide();
       $(".map-overlay").show(); // Show the overlay on Bahari Bay link click
       $("#mapFrame").attr("src", "https://www.paliamaps.com/pages/BahariBay.php").show();
       $("#guideFrame").hide().attr("src", "");
+      $("#gardenFrame").hide().attr("src", "");
     });
 
     $("#AllguidesLink").click(function() {
@@ -837,11 +852,22 @@ $(".white-square2").hide();
       $(".white-square").hide();
       $("#guideFrame").attr("src", "https://docs.google.com/spreadsheets/d/1krXJMX0oRhz02hpKRlRAvyljFbNXTxaoMtrfSza_weA/edit#gid=0&rm=demo").show();
       $("#mapFrame").hide().attr("src", "");
-    });
+      $("#gardenFrame").hide().attr("src", "");
+       });
 
     $("#creditsLink").click(function() {
         $(".white-square").hide();
         $(".white-square2").show().css("display", "flex");
+        $(".map-overlay").hide();
+        $("#mapFrame").hide().attr("src", "");
+        $("#guideFrame").hide().attr("src", "");
+	$("#gardenFrame").hide().attr("src", "");
+      });
+
+    $("#gardenLink").click(function() {
+        $(".white-square").hide();
+        $(".white-square2").hide();
+        $("#gardenFrame").attr("src", "https://palia-garden-planner.vercel.app").show();
         $(".map-overlay").hide();
         $("#mapFrame").hide().attr("src", "");
         $("#guideFrame").hide().attr("src", "");
