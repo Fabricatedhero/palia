@@ -147,7 +147,7 @@ body {
   border-radius: 5px;
   padding: 10px;
   max-height: 500px; /* Set a maximum height */
-overflow-y: auto; /* Enable vertical scroll if needed */
+  overflow-y: auto; /* Enable vertical scroll if needed */
 }
 
 
@@ -382,6 +382,13 @@ color: #777777;
 }
 
 .sub-submenu-furniture li:hover::after {
+  content: ""; /* Remove the content property */
+  margin-left: 0; /* Reset the margin */
+  font-size: 0; /* Set font-size to 0 to hide the icon */
+  display: none; /* Hide the icon */
+}
+
+.sub-sub-submenu-furniture li:hover::after {
   content: ""; /* Remove the content property */
   margin-left: 0; /* Reset the margin */
   font-size: 0; /* Set font-size to 0 to hide the icon */
