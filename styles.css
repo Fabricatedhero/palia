@@ -1,7 +1,7 @@
 /* Your provided CSS styles */
 body {
   margin: 0;
-  font-family: "Comic Sans MS", cursive;
+  font-family: "Comic Sans MS";
   background-image: url('https://images.ctfassets.net/qyr5bjm559gz/4mbCdNm4jZgN3bYxtaXSvK/223534088fdf7eea52027ce6bf595b82/PALIA_Key_Art_Logo_1920x1080.jpg?fm=webp');
   background-size: auto;
  background-color: #0D96EC;
@@ -110,6 +110,21 @@ body {
   max-height: 500px; /* Set a maximum height */
   overflow-y: auto; /* Enable vertical scroll if needed */
 }
+.sub-sub-submenu-furniture {
+  list-style-type: none; /* Remove list bullets (dots) */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 10px;
+  max-height: 500px; /* Set a maximum height */
+  overflow-y: auto; /* Enable vertical scroll if needed */
+}
+
+
 .sub-submenu-store {
   list-style-type: none; /* Remove list bullets (dots) */
   display: none;
@@ -121,6 +136,21 @@ body {
   border-radius: 5px;
   padding: 10px;
 }
+.sub-sub-submenu-store {
+  list-style-type: none; /* Remove list bullets (dots) */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 10px;
+  max-height: 500px; /* Set a maximum height */
+overflow-y: auto; /* Enable vertical scroll if needed */
+}
+
+
 .submenu li:hover > .sub-submenu {
   display: block;
 }
@@ -131,6 +161,10 @@ body {
 .submenu li:hover > .sub-submenu-store {
   display: block;
 }
+.submenu li:hover > .sub-sub-submenu-store {
+  display: block;
+}
+
 .submenu-map li:hover > .sub-submenu-store {
   display: block;
 }
@@ -138,8 +172,15 @@ body {
 .submenu li:hover > .sub-submenu-furniture {
   display: block;
 }
+.submenu li:hover > .sub-sub-submenu-furniture {
+  display: block;
+}
 
 .submenu-map li:hover > .sub-submenu-furniture {
+  display: block;
+}
+
+.submenu-map li:hover > .sub-sub-submenu-furniture {
   display: block;
 }
 
@@ -230,7 +271,7 @@ body {
     padding: 10px;
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 99%;
   }
 
 .submenu a i {
