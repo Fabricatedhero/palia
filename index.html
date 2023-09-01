@@ -13,7 +13,16 @@
       height: 900px;
       border: none;
     }
-  </style>
+   </style>
+  <style>
+      #guideFrame {
+      display: none;
+      width: 100%;
+      height: 885px;
+      border: none;
+    }
+   </style>
+
 </head>
 <body>
 <nav>
@@ -685,7 +694,29 @@
                 </li>
               </ul>
             </li>
-
+              <li class="menu-item">
+              <a href="#">Tavern</a>
+              <ul class="sub-sub-submenu-store">
+                  <strong>Location:</strong><br>South side of Kilima Village. It can be identified by the windmill atop its roof and large cask out front<br>
+                  <br>
+                  <strong>Items for sale:</strong><br>
+                  Reth's Lettuce Soup: 200 gold<br>
+                  Reth's Steak Dinner: 500 gold<br>
+                  Reth's Potato Soup: 550 gold<br>
+                  Reth's Bouilabaisse: 700 gold<br>
+                </li>
+              </ul>
+            </li>
+              <li class="menu-item">
+              <a href="#">Tailor</a>
+              <ul class="sub-sub-submenu-store">
+                  <strong>Location:</strong><br>North side of Kilima Village. It is located next to the General Store<br>
+                  <br>
+                  <strong>Items for sale:</strong><br>
+                  Coming Soon<br>
+                </li>
+              </ul>
+            </li>
 
                 </li>
               </ul>
@@ -694,35 +725,11 @@
         </li>
 
 <li class="menu-item">
-      <a href="#">Guides and Tools</a>
+      <a href="#">Tools</a>
         <ul class="submenu">
-        <li class="menu-item dropdown">
-        <a href="#">Fishing</a>
-        <ul class="sub-submenu">
-            <li class="menu-item">
-              <a href="#">Coming Soon</a>
-                  </ul>
-      </li>
-      </li>
-            <li class="menu-item dropdown">
-            <a href="#">Funiture</a>
-          <ul class="sub-submenu">
-            <li class="menu-item">
-              <a href="#">Coming Soon</a>
-                  </ul>
-      </li>
-      </li>
-              <li class="menu-item dropdown">
-            <a href="#">Fertilizer</a>
-          <ul class="sub-submenu">
-            <li class="menu-item">
-              <a href="#">Coming Soon</a>
-                  </ul>
-      </li>
-      </li>
+        <li><a href="#" id="AllguidesLink">Guides <i class="fas fa-link"></i></a></li>
       </ul>
-      </li>
-      </li>
+    </li>
 <li class="menu-item">
       <a id="creditsLink" href="#">Credit</a>
       </ul>
@@ -740,6 +747,7 @@
 
 <div class="map-overlay">powered by paliamaps.com</div>
 <iframe id="mapFrame" src="" frameborder="0"></iframe>
+<iframe id="guideFrame" src="" frameborder="0"></iframe>
 
 <div class="white-square2" style="display: none;">
   <div class="credit-text">
@@ -762,6 +770,10 @@
       <p class="text-label">Items:</p>
       <p class="text-info">Palia.Wiki.gg</p>
     </div>
+      <div class="background-text">
+      <p class="text-label">Guide Spreadsheet:</p>
+      <p class="text-info">Arenvanya</p>
+    </div>
   </div>
 </div>
 
@@ -779,7 +791,6 @@
     -BDF
   </p>
 </div>
-
 <script>
   function updateBackgroundSize() {
     const body = document.body;
@@ -802,6 +813,7 @@ $(".white-square2").hide();
       $(".white-square").show();
       $(".map-overlay").hide(); // Hide the overlay on home link click
       $("#mapFrame").hide().attr("src", "");
+      $("#guideFrame").hide().attr("src", "");
     });
 
     $("#kilimaLink").click(function() {
@@ -809,6 +821,7 @@ $(".white-square2").hide();
       $(".white-square").hide();
       $(".map-overlay").show(); // Show the overlay on Kilima Village link click
       $("#mapFrame").attr("src", "https://www.paliamaps.com/pages/Kilima.php").show();
+      $("#guideFrame").hide().attr("src", "");
     });
 
     $("#bahariLink").click(function() {
@@ -816,6 +829,14 @@ $(".white-square2").hide();
       $(".white-square").hide();
       $(".map-overlay").show(); // Show the overlay on Bahari Bay link click
       $("#mapFrame").attr("src", "https://www.paliamaps.com/pages/BahariBay.php").show();
+      $("#guideFrame").hide().attr("src", "");
+    });
+
+    $("#AllguidesLink").click(function() {
+      $(".white-square2").hide();
+      $(".white-square").hide();
+      $("#guideFrame").attr("src", "https://docs.google.com/spreadsheets/d/1krXJMX0oRhz02hpKRlRAvyljFbNXTxaoMtrfSza_weA/edit#gid=0&rm=demo").show();
+      $("#mapFrame").hide().attr("src", "");
     });
 
     $("#creditsLink").click(function() {
@@ -823,14 +844,15 @@ $(".white-square2").hide();
         $(".white-square2").show().css("display", "flex");
         $(".map-overlay").hide();
         $("#mapFrame").hide().attr("src", "");
+        $("#guideFrame").hide().attr("src", "");
       });
 
     // Hide overlay when clicking outside of the map frame
     $("#mapFrame").click(function() {
       $(".map-overlay").hide();
     });
+
   });
 </script>
-
 </body>
 </html>
